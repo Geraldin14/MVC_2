@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+<div class="page-header">
+    <h1>Document Form</h1>
+    <p> El documento a actualizar tiene el id: <b> {{ value }} </b>   </p>
+        <br>
+            <form action="/document_update_for_real" method="post">
+                <input type="hidden" id="op" name="op" value="I">
+
+		<input type="hidden" id="cosas" name="id_estatica" value={{ value }}>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup_titulo">Titulo</span>
+                    <input type="text" class="form-control" name="titulo" aria-label="Sizing example input" aria-describedby="inputGroup_idt">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup_autores">Autores</span>
+                    <input type="text" class="form-control" name="autores" aria-label="Sizing example input" aria-describedby="inputGroup_name">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup_pub_date">Publico datos</span>
+                    <input type="text" class="form-control" name="publico_datos" aria-label="Sizing example input" aria-describedby="inputGroup_lastName">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup_editorial">Editorial</span>
+                    <input type="text" class="form-control" name="editorial" aria-label="Sizing example input" aria-describedby="inputGroup_lastName">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup_numero_paginas">Numero Paginas</span>
+                    <input type="text" class="form-control" name="numero_paginas" aria-label="Sizing example input" aria-describedby="inputGroup_lastName">
+                </div>
+                <br >
+                <input class="btn btn-primary" type="submit" name="form" value="Submit" />
+            </form>
+</div>
+{% endblock %}
